@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Credit Risk API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}" />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"> 
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+    <div class="contact1">
+        <div class="container-contact1">
+            <div class="contact1-pic js-tilt" data-tilt>
+                <img src="{{ url_for('static', filename='images/metrodata.png') }}" alt="IMG">
+            </div>
+
+            <form action="{{ url_for('predict')}}" method="post">
+                <span class="contact1-form-title">
+                    Credit Risk Modelling
+                </span>
+
+                <!-- name -->
+                <div class="wrap-input1 validate-input" >
+                    <input class="input1" type="text" name="name" placeholder="Name" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- grade -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="grade" placeholder="Loan Grade" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>              
+
+                <!-- sub_grade_num -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="grade" name="sub_grade_num" placeholder="Loan Subgrade" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- short_emp -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="short_emp" placeholder="Employment" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- emp_length_num -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="emp_length_num" placeholder="Employment Length in Year" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- home_ownership -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="home_ownership" placeholder="Home Ownership" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- dti -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" name="dti" placeholder="Debt to Income Ratio" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- purpose -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" name="purpose" placeholder="Borrower Loan Purpose"  required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- payment_inc_ratio -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="payment_inc_ratio" placeholder="Monthly payment to Income Ratio" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- delinq_2yrs -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="delinq_2yrs" placeholder="The number of delinquency" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- delinq_2yrs_zero -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="delinq_2yrs_zero" placeholder="No delinquency in the last 2 years" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- inq_last_6mths -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="inq_last_6mths" placeholder="Creditor inquiries in last 6 months" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- last_delinq_none -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="last_delinq_none" placeholder="Has borrower had a delinquincy" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- last_major_derog_none -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="last_major_derog_none" placeholder="Has borrower had 90-day or worse rating" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- open_acc -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="open_acc" placeholder="Number of Open Credit Acc" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- pub_rec -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="pub_rec" placeholder="Number of Derogatory Public Records" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- pub_rec_zero -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="pub_rec_zero" placeholder="No derogatory public records" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <!-- revol_util -->
+                <div class="wrap-input1 validate-input">
+                    <input class="input1" type="text" name="revol_util" placeholder="Percent of available credit being used" required="required" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <div class="container-contact1-form-btn">
+                    <button type="submit" class="contact1-form-btn">
+                        <span>
+                            Predict
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{url_for('.static', filename='vendor/jquery/jquery-3.2.1.min.js')}}"> </script>
+
+    <script src="{{url_for('.static', filename='vendor/bootstrap/js/popper.js')}}"></script>
+
+    <script src="{{url_for('.static', filename='vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+
+    <script src="{{url_for('.static', filename='vendor/select2/select2.min.js')}}"></script>
+
+    <script src="{{url_for('.static', filename='vendor/tilt/tilt.jquery.min.js')}}"></script>
+    
+    <script >
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script> -->
+
+    <script src="{{url_for('.static', filename='js/main.js')}}"> </script>
+
+</body>
+</html>
