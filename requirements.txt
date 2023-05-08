@@ -1,8 +1,8 @@
 click==7.1.2
-Flask==1.1.2
+Flask
 itsdangerous==1.1.0
 Jinja2==2.11.2
-joblib==0.17.0
+joblib
 MarkupSafe==1.1.1
 numpy==1.19.2
 pandas==1.1.3
