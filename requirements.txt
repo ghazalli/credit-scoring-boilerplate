@@ -13,5 +13,5 @@ scipy==1.5.3
 six==1.15.0
 sklearn-pandas==2.0.2
 threadpoolctl==2.1.0
-Werkzeug==1.0.1
+Werkzeug
 pandas-gbq==0.15.0
